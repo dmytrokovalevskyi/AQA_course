@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("First commit THIS CHANGES WILL BE REVERTED");
+        System.out.println("First commit");
     }
 }
