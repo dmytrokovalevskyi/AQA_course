@@ -9,10 +9,10 @@ public class StepFirst {
         float floatVariable = 3.14f;
         double doubleVariable = 3.14159265359;
         char charVariable = 's';
-        boolean booleanVarialbe = false;
-        final String constantString = "Constant value";
+        boolean booleanVariable = false;
+        String stringVariable = "This is string.";
 
         //print all of them with concatenation
-        System.out.println("byte variable = " + byteVariable + ", short variable = " + shortVariable + ", int variable = " + intVariable + ", long variable = " + longVariable + ", float variable = " + floatVariable + ", double variable = " + doubleVariable + ", char variable = " + charVariable + ", boolean varialbe = " + booleanVarialbe + ", constant = "+ constantString);
+        System.out.println("byte variable = " + byteVariable + ", short variable = " + shortVariable + ", int variable = " + intVariable + ", long variable = " + longVariable + ", float variable = " + floatVariable + ", double variable = " + doubleVariable + ", char variable = " + charVariable + ", boolean varialbe = " + booleanVariable + ", string variable = " + stringVariable);
     }
 }
