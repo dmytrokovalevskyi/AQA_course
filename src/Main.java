@@ -38,7 +38,16 @@ public class Main {
 
         // Task 4
         int[] unsortedArray = {25, 12, 64, 9, 8, 11, 6, 2};
-        Arrays.sort(unsortedArray);
+        int buffer;
+        for (int i = 0; i < unsortedArray.length; i++) {
+            for (int j = i+1; j < unsortedArray.length; j++) {
+                if (unsortedArray[i] > unsortedArray[j]) {
+                    buffer = unsortedArray[i];
+                    unsortedArray[i] = unsortedArray[j];
+                    unsortedArray[j] = buffer;
+                }
+            }
+        }
         System.out.println(Arrays.toString(unsortedArray));
     }
 }
