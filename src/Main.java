@@ -17,6 +17,7 @@ public class Main {
         System.out.println("Enter your sentence for Task 2 please: ");
         String sentence2 = scan.nextLine();
         char[] sentence2Array = sentence2.toCharArray();
+        String[] splittedSentence2 = sentence2.split(" ");
         if (sentence2.contains("java")) {
             char[] revertedArray = new char[sentence2Array.length];
             int j = 0;
@@ -27,13 +28,12 @@ public class Main {
             System.out.println(revertedArray);
         }
         else {
-            for (int i = 0; i < sentence2.length(); i++) {
+            for (int i = 0; i < splittedSentence2.length; i++) {
                     if (i % 2 == 0) {
-                        String letter = sentence2.substring(i, i+1);
-                        System.out.print(letter.toUpperCase());
+                        System.out.print(splittedSentence2[i].toUpperCase() + " ");
                     }
                     else {
-                        System.out.print(sentence2.charAt(i));
+                        System.out.print(splittedSentence2[i] + " ");
                     }
             }
             System.out.println("");
