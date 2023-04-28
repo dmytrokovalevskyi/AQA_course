@@ -9,15 +9,9 @@ public class Card {
     //constructor
     public Card(String number, String expireDate, int cvv, String cardType) {
         switch (cardType) {
-            case "Visa":
-                this.cardType = cardType;
-                break;
-            case "MasterCard":
-                this.cardType = cardType;
-                break;
-            default:
-                System.out.println("Card type can be only Visa or MasterCard");
-                break;
+            case "Visa" -> this.cardType = cardType;
+            case "MasterCard" -> this.cardType = cardType;
+            default -> System.out.println("Card type can be only Visa or MasterCard");
         }
         this.number = number;
         this.expireDate = expireDate;

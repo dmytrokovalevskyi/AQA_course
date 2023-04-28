@@ -9,7 +9,7 @@ public class User {
     private String phoneNumber;
     private Address billingAddress;
     private Address deliveryAddress;
-    private ArrayList<String> cards = new ArrayList<>();
+    private ArrayList<Card> cards = new ArrayList<>();
     private Role role;
     private String manager;
     protected static int idCounter = 1;
@@ -28,12 +28,16 @@ public class User {
         this.billingAddress = billingAddress;
     }
 
+    public void setDeliveryAddress(Address deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+
     public void setManager(String manager) {
         this.manager = manager;
     }
 
     public void setCards(Card card) {
-        cards.add(card.toString());
+        cards.add(card);
     }
 
     //getters
@@ -69,7 +73,7 @@ public class User {
         return deliveryAddress;
     }
 
-    public ArrayList<String> getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
@@ -84,7 +88,6 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", fullName='" + fullName + '\'' +
@@ -92,9 +95,7 @@ public class User {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", billingAddress='" + billingAddress + '\'' +
                 ", deliveryAddress='" + deliveryAddress + '\'' +
-                ", cards=" + cards +
                 ", role='" + role + '\'' +
-                ", manager='" + manager + '\'' +
                 '}';
     }
 
@@ -119,9 +120,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.role = new Role(role);
-        String space = " ";
-        String firstNameWithSpace = firstName.concat(space);
-        this.fullName = firstNameWithSpace.concat(lastName);
+        this.fullName = firstName.concat(" ").concat(lastName);
         this.id = idCounter;
         idCounter += 1;
     }

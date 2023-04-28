@@ -8,36 +8,36 @@ public class Role {
     public Role(String role) {
         this.role = role;
         switch (role) {
-            case "Admin":
+            case "Admin" -> {
                 viewAll = true;
                 editAll = true;
                 addAll = true;
                 deleteAll = true;
-                break;
-            case "Main Customer":
+            }
+            case "Main Customer" -> {
                 viewAll = true;
                 editAll = true;
                 addAll = true;
                 deleteAll = false;
-                break;
-            case "Customer":
+            }
+            case "Customer" -> {
                 viewAll = true;
                 editAll = false;
                 addAll = true;
                 deleteAll = false;
-                break;
-            case "Viewer":
+            }
+            case "Viewer" -> {
                 viewAll = true;
                 editAll = false;
                 addAll = false;
                 deleteAll = false;
-                break;
-            default:
+            }
+            default -> {
                 viewAll = true;
                 editAll = false;
                 addAll = false;
                 deleteAll = false;
-                break;
+            }
         }
     }
 
