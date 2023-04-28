@@ -11,7 +11,7 @@ public class User {
     private Address deliveryAddress;
     private ArrayList<Card> cards = new ArrayList<>();
     private Role role;
-    private String manager;
+    private Manager manager;
     protected static int idCounter = 1;
 
     //setters
@@ -32,7 +32,7 @@ public class User {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public void setManager(String manager) {
+    public void setManager(Manager manager) {
         this.manager = manager;
     }
 
@@ -81,7 +81,7 @@ public class User {
         return role;
     }
 
-    public String getManager() {
+    public Manager getManager() {
         return manager;
     }
 
