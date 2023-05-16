@@ -1,3 +1,5 @@
+import exceptions.CardFormatInvalidException;
+
 public class Card {
     private int id;
     private String number;
@@ -7,11 +9,11 @@ public class Card {
     protected static int idCounter = 1;
 
     //constructor
-    public Card(String number, String expireDate, int cvv, String cardType) {
+    public Card(String number, String expireDate, int cvv, String cardType) throws CardFormatInvalidException {
         switch (cardType) {
             case "Visa" -> this.cardType = cardType;
             case "MasterCard" -> this.cardType = cardType;
-            default -> System.out.println("Card type can be only Visa or MasterCard");
+            default -> throw new CardFormatInvalidException("Card type can be only Visa or MasterCard");
         }
         this.number = number;
         this.expireDate = expireDate;

@@ -1,3 +1,5 @@
+import exceptions.PhoneNumberException;
+
 import java.util.ArrayList;
 
 public class User {
@@ -15,14 +17,17 @@ public class User {
     protected static int idCounter = 1;
 
     //setters
-    public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.startsWith("+")) {
-            this.phoneNumber = phoneNumber;
-        }
-        else {
-            System.out.println("Phone number must start with '+'");
-        }
-    }
+    public void setPhoneNumber(String phoneNumber) throws PhoneNumberException {
+        try {
+            if (phoneNumber.startsWith("+")) {
+                this.phoneNumber = phoneNumber;
+            }
+            else {
+                throw new PhoneNumberException("Phone number must start with '+'");
+            }
+    } catch (PhoneNumberException e) {
+            System.out.println("Phone number exception.");
+        }}
 
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
