@@ -3,30 +3,30 @@ public class Role {
     private final boolean editAll;
     private final boolean addAll;
     private final boolean deleteAll;
-    private String role;
+    private RoleEnum role;
 
-    public Role(String role) {
+    public Role(RoleEnum role) {
         this.role = role;
         switch (role) {
-            case "Admin" -> {
+            case ADMIN -> {
                 viewAll = true;
                 editAll = true;
                 addAll = true;
                 deleteAll = true;
             }
-            case "Main Customer" -> {
+            case MAIN_CUSTOMER -> {
                 viewAll = true;
                 editAll = true;
                 addAll = true;
                 deleteAll = false;
             }
-            case "Customer" -> {
+            case CUSTOMER -> {
                 viewAll = true;
                 editAll = false;
                 addAll = true;
                 deleteAll = false;
             }
-            case "Viewer" -> {
+            case VIEWER -> {
                 viewAll = true;
                 editAll = false;
                 addAll = false;

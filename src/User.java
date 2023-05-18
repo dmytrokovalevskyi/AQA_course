@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class User {
+public class User implements PrintInfo {
     private int id;
     private String firstName;
     private String lastName;
@@ -99,12 +99,12 @@ public class User {
                 '}';
     }
 
-    public void printUserInfo() {
+    public void printInfo() {
         System.out.println(toString());
     }
 
     // constructors:
-    public User(String fullName, String email, String role) {
+    public User(String fullName, String email, RoleEnum role) {
         this.fullName = fullName;
         String[] splittedName = fullName.split(" ");
         this.firstName = splittedName[0];
@@ -115,7 +115,7 @@ public class User {
         idCounter += 1;
     }
 
-    public User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, RoleEnum role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -123,5 +123,9 @@ public class User {
         this.fullName = firstName.concat(" ").concat(lastName);
         this.id = idCounter;
         idCounter += 1;
+    }
+
+    public void printCards() {
+        cards.forEach(System.out::println);
     }
 }
