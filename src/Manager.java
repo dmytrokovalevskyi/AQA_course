@@ -4,12 +4,12 @@ public class Manager extends User {
     private String workPhoneNumber;
 
     //constructors
-    public Manager(String fullName, String email, String role, String position) {
+    public Manager(String fullName, String email, RoleEnum role, String position) {
         super(fullName, email, role);
         this.position = position;
     }
 
-    public Manager(String firstName, String lastName, String email, String role, String position) {
+    public Manager(String firstName, String lastName, String email, RoleEnum role, String position) {
         super(firstName, lastName, email, role);
         this.position = position;
     }
@@ -50,7 +50,7 @@ public class Manager extends User {
     }
 
     @Override
-    public void printUserInfo() {
+    public void printInfo() {
         System.out.println(super.toString() + this.toString());
     }
 }

@@ -3,15 +3,14 @@ public class Card {
     private String number;
     private String expireDate;
     private int cvv;
-    private String cardType;
+    private CardTypeEnum cardType;
     protected static int idCounter = 1;
 
     //constructor
-    public Card(String number, String expireDate, int cvv, String cardType) {
+    public Card(String number, String expireDate, int cvv, CardTypeEnum cardType) {
         switch (cardType) {
-            case "Visa" -> this.cardType = cardType;
-            case "MasterCard" -> this.cardType = cardType;
-            default -> System.out.println("Card type can be only Visa or MasterCard");
+            case VISA -> this.cardType = cardType;
+            case MASTERCARD -> this.cardType = cardType;
         }
         this.number = number;
         this.expireDate = expireDate;
@@ -46,11 +45,11 @@ public class Card {
         this.cvv = cvv;
     }
 
-    public String getCardType() {
+    public CardTypeEnum getCardType() {
         return cardType;
     }
 
-    public void setCardType(String cardType) {
+    public void setCardType(CardTypeEnum cardType) {
         this.cardType = cardType;
     }
 
