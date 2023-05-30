@@ -126,6 +126,6 @@ public class User implements PrintInfo {
     }
 
     public void printCards() {
-        cards.forEach(System.out::println);
+        cards.forEach((card -> System.out.println("Card number is: " + card.getNumber())));
     }
 }

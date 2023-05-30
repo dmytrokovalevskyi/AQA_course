@@ -4,7 +4,7 @@ public class Broker implements PrintInfo {
     private String name;
     private String email;
     private String phoneNumber;
-    private ArrayList clients;
+    private ArrayList<User> clients;
 
     public Broker(String name, String email, String phoneNumber) {
         this.name = name;
