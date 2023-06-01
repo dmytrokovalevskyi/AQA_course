@@ -13,7 +13,13 @@ public class Card {
         switch (cardType) {
             case "Visa" -> this.cardType = cardType;
             case "MasterCard" -> this.cardType = cardType;
-            default -> throw new CardFormatInvalidException("Card type can be only Visa or MasterCard");
+            default -> {
+                try {
+                    throw new CardFormatInvalidException("Card type can be only Visa or MasterCard");
+                } catch (CardFormatInvalidException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         this.number = number;
         this.expireDate = expireDate;

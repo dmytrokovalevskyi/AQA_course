@@ -17,7 +17,7 @@ public class User {
     protected static int idCounter = 1;
 
     //setters
-    public void setPhoneNumber(String phoneNumber) throws PhoneNumberException {
+    public void setPhoneNumber(String phoneNumber) {
         try {
             if (phoneNumber.startsWith("+")) {
                 this.phoneNumber = phoneNumber;
@@ -26,7 +26,7 @@ public class User {
                 throw new PhoneNumberException("Phone number must start with '+'");
             }
     } catch (PhoneNumberException e) {
-            System.out.println("Phone number exception.");
+            e.printStackTrace();
         }}
 
     public void setBillingAddress(Address billingAddress) {
