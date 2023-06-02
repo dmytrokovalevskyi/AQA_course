@@ -9,7 +9,7 @@ public class Card {
     protected static int idCounter = 1;
 
     //constructor
-    public Card(String number, String expireDate, int cvv, String cardType) throws CardFormatInvalidException {
+    public Card(String number, String expireDate, int cvv, String cardType) {
         switch (cardType) {
             case "Visa" -> this.cardType = cardType;
             case "MasterCard" -> this.cardType = cardType;

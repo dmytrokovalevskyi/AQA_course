@@ -1,7 +1,7 @@
 import exceptions.CardFormatInvalidException;
 
 public class Main {
-    public static void main(String[] args) throws CardFormatInvalidException {
+    public static void main(String[] args) {
         User kolyan = new User("kolyan", "petrov", "petrov.kolya@airslate.com", "Viewer");
         kolyan.setCards(new Card("1234 5678 9000 3211", "11/24", 321, "Visa"));
         kolyan.setBillingAddress(new Address("Ukraine", "Dnipro", "Sholohova", "29", "49080"));
