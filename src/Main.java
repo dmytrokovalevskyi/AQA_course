@@ -1,9 +1,12 @@
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    private static final String USERS_FILE = "users.csv";
+    public static Scanner scanner;
     public static void main(String[] args) throws IOException {
         User kolyan = new User("kolyan", "petrov", "petrov.kolya@airslate.com", RoleEnum.VIEWER);
         kolyan.setCards(new Card("1234 5678 9000 3211", "11/24", 321, CardTypeEnum.VISA));
@@ -19,8 +22,8 @@ public class Main {
 
         //step 5
         Scanner scan = new Scanner(System.in);
-        FileWriter fw = new FileWriter("users.csv", true);
-        FileReader fr = new FileReader("users.csv");
+        FileWriter fw = new FileWriter(USERS_FILE, true);
+        FileReader fr = new FileReader(USERS_FILE);
         Scanner scanFR = new Scanner(fr);
         RoleEnum role = null;
 
@@ -45,15 +48,28 @@ public class Main {
                         }
                     }
                     User newUser = new User(firstName, lastName, email, role);
-                    fw.write(newUser.toString());
-                    fw.close();
-                    System.out.println("User was successfully added!");
+                    try {
+                        fw = new FileWriter(USERS_FILE, true);
+                        fw.append(String.valueOf(newUser)).append("\n");
+                        System.out.println("User successfully added!");
+                        fw.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 case ("2") -> {
-                    while (scanFR.hasNextLine()) {
-                        System.out.println(scanFR.nextLine());
+                    try {
+                        fr = new FileReader(USERS_FILE);
+                        scanner = new Scanner(fr);
+                        while (scanner.hasNextLine()){
+                            System.out.println(scanner.nextLine());
+                        }
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } finally {
+                        fr.close();
+                        scanner.close();
                     }
-                    fr.close();
                 }
                 case ("exit") -> {
                     fr.close();
